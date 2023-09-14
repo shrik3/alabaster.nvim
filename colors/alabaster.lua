@@ -16,21 +16,26 @@ if vim.o.background == "dark" then
     vim.g.terminal_color_4 = "#217EBC"
     vim.g.terminal_color_5 = "#9B3596"
     vim.g.terminal_color_6 = "#178F79"
-    vim.g.terminal_color_7 = "#cecece"
+    vim.g.terminal_color_7 = "#eeffcc"
     vim.g.terminal_color_8 = "#333333"
     vim.g.terminal_color_9 = "#c33c33"
     vim.g.terminal_color_10 = "#95cb82"
     vim.g.terminal_color_11 = "#dfdf8e"
-    vim.g.terminal_color_12 = "#71aed7"
+    vim.g.terminal_color_12 = "#88cce9"
     vim.g.terminal_color_13 = "#cc8bc9"
     vim.g.terminal_color_14 = "#47BEA9"
     vim.g.terminal_color_15 = "#ffffff"
 
     -- colors
-    local bg = "#0e1415"
-    local fg = "#cecece"
+    -- local bg = "#0e1415"
+    -- local fg = "#cecece"
+    -- hint: try to keep these constant with terminal colors
+    local bg = "#000022"
+    local fg = "#eeffcc"
     local punct_fg = "#708b8d"
-    local def_fg = "#71ade7"
+    -- local def_fg = "#88cce9"
+    local white = "#ffffff"
+    local def_fg = "#88cce9"
     local const_fg = "#cc8bc9"
     local active = "#cd974b"
     local string_fg = "#95cb82"
@@ -39,7 +44,7 @@ if vim.o.background == "dark" then
     local diffdelete = "#d2322d"
     local diffchange = "#ec8013"
     local statusline = "#162022"
-    local comment = "#dfdf8e"
+    local comment = "#aaaa8e"
     local dim_comment = "#696969"
     local mistake = {
         fg = "#c33c33",
@@ -54,12 +59,14 @@ if vim.o.background == "dark" then
         blue = "#71aed7",
         brightyellow = "#dfdf8e",
         cyan = "#47bea9",
-        green = "#95cb82",
+        green = "#00ff00",
         magenta = "#cc8bc9",
         red = "#c33c33",
         white = "#cecece",
         yellow = "#cd974b",
     }
+
+    visual_bg = "#333333"
     local comment_fg = vim.g.alabaster_dim_comments and dim_comment or comment
     local pmenu_bg = "#182325"
     local float_bg = vim.g.alabaster_floatborder and bg or pmenu_bg
@@ -69,8 +76,9 @@ if vim.o.background == "dark" then
             fg = float_bg,
         }
     theme = {
+        cBlock = { fg = ansi.green, bold=1 },
         Comment = { fg = comment_fg },
-        ColorColumn = { bg = "#E2EEEE" },
+        ColorColumn = { bg = "#000044" },
         Conceal = { fg = "#b0b0b0" },
         Cursor = { bg = active, fg = "#000000" },
         -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -122,8 +130,8 @@ if vim.o.background == "dark" then
         TabLineFill = { bg = statusline },
         TabLineSel = { bg = statusline, fg = ansi.blue },
         Title = { fg = const_fg },
-        Visual = { bg = "#293334" },
-        VisualNOS = { bg = "#293334" },
+        Visual = { bg = visual_bg },
+        VisualNOS = { bg = visual_bg },
         WarningMsg = { fg = "#e1ad4c" },
         WildMenu = { bg = "#354c50" },
         WinBar = { bg = bg, fg = ansi.white, bold = true },
@@ -139,18 +147,18 @@ if vim.o.background == "dark" then
         Operator = { fg = punct_fg },
 
         --- SYNTAX II: TS groups have their own definition, the below are defined to have somewhat working hl w/o treesitter
-        Identifier = { fg = ansi.white },
+        Identifier = { fg = fg },
         Function = { fg = def_fg },
-        Statement = { fg = ansi.white },
-        Conditional = { fg = ansi.white },
-        Repeat = { fg = ansi.white },
-        Label = { fg = def_fg },
-        Keyword = { fg = ansi.white },
+        Statement = { fg = ansi.green, bold=1},
+        Conditional = { fg = ansi.green, bold=1 },
+        Repeat = { fg = ansi.green, bold=1 },
+        Label = { fg = ansi.green },
+        Keyword = { fg = ansi.green },
         Exception = { fg = ansi.white },
         PreProc = { fg = ansi.white },
         Include = { fg = ansi.white },
         Define = { fg = ansi.white },
-        Macro = { fg = ansi.white },
+        Macro = { fg = white },
         PreCondit = { fg = ansi.white },
         Type = { fg = ansi.white },
         StorageClass = { fg = ansi.white },
@@ -211,8 +219,8 @@ if vim.o.background == "dark" then
         TSFunction = { fg = ansi.white },
         TSFuncBuiltin = { fg = ansi.white },
         TSFuncMacro = { fg = ansi.white },
-        TSKeyword = { fg = ansi.white },
-        TSKeywordFunction = { fg = ansi.white },
+        TSKeyword = { fg = ansi.green },
+        TSKeywordFunction = { fg = ansi.green },
         TSLabel = { fg = ansi.white },
         TSMethod = { fg = ansi.white },
         TSNamespace = { fg = ansi.white },
@@ -246,8 +254,8 @@ if vim.o.background == "dark" then
         ["@function"] = { fg = ansi.white },
         ["@function.builtin"] = { fg = ansi.white },
         ["@function.macro"] = { fg = ansi.white },
-        ["@keyword"] = { fg = ansi.white },
-        ["@keyword.function"] = { fg = ansi.white },
+        ["@keyword"] = { fg = ansi.green },
+        ["@keyword.function"] = { fg = ansi.green },
         ["@label"] = { fg = ansi.white },
         ["@method"] = { fg = ansi.white },
         ["@namespace"] = { fg = ansi.white },
@@ -400,14 +408,14 @@ else
     vim.g.terminal_color_15 = "#f7f7f7"
 
     -- colors
-    local bg = "#f7f7f7"
+    local bg = "#cccccc"
     local fg = "#000000"
     local punct_fg = "#777777"
-    local def_fg = "#325cc0"
+    local def_fg = "#000000"
     local const_fg = "#7a3e9d"
     local active = "#ffbc5d"
     local active_blue = "#007acc"
-    local string_fg = "#448c27"
+    local string_fg = "#005500"
     local darker_fg = "#7d7d7d"
     local diffadd = "#284918"
     local diffdelete = "#B40600"
@@ -443,8 +451,9 @@ else
             fg = float_bg,
         }
     theme = {
+        cBlock = {bold=1},
         Comment = { fg = comment_fg },
-        ColorColumn = { bg = "#E2EEEE" },
+        ColorColumn = { bg = "#ffffff" },
         Conceal = { fg = "#b0b0b0" },
         Cursor = { bg = "#007acc", fg = "#bfdbfe" },
         -- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -516,10 +525,10 @@ else
         Identifier = { fg = ansi.black },
         Function = { fg = def_fg },
         Statement = { fg = ansi.black },
-        Conditional = { fg = ansi.black },
-        Repeat = { fg = ansi.black },
+        Conditional = { fg = ansi.black, bold=1},
+        Repeat = { fg = ansi.black, bold=1},
         Label = { fg = def_fg },
-        Keyword = { fg = ansi.black },
+        Keyword = { fg = ansi.black, bold=1},
         Exception = { fg = ansi.black },
         PreProc = { fg = ansi.black },
         Include = { fg = ansi.black },
