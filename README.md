@@ -1,6 +1,28 @@
 Alabaster Color Scheme
 ===
+## Note on the fork
 
+This is to replace my ["vision" colorscheme](https://github.com/shrik3/vision.nvim). Vision was based on the [tokyo-night](https://github.com/folke/tokyonight.nvim) but it was over complicated and I want something minimal.
+
+The motivation of my fork is to have a colorscheme for visually impaired,
+especially color-blind devs like myself. I tried countless colorschemes in the
+past but none of those looks right to my eyes. 
+
+**Guidelines**
+- contrast matters. 
+- there are some certain conbinations of fg and bg that hurt.
+- on a light background, it's way more difficult to tell colors apart.
+- no one can remember all the color encoding. If you highlight too many things.
+  the semantic meaning of a color will be lost in the end. **If you highlight
+  everything, you are effectively hightlighting nothing**.
+- bold text helps.
+
+Below is the README from the original Abalaster.
+
+
+
+
+---
 A color scheme with minimal amount of highlighting for neovim.
 
 ## Motivation
