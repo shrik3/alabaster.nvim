@@ -385,7 +385,7 @@ if vim.o.background == "dark" then
         NoiceCmdlineIconSearch = { link = "AlabasterYellow" },
         -- Languages
         --- asm
-        asmDirective = { fg = dim_comment },
+        asmDirective = { fg = def_fg},
         nasmLabel = { link = "AlabasterDefinition" },
     }
 else
@@ -761,7 +761,7 @@ else
         NoiceCmdlineIconSearch = { link = "AlabasterYellow" },
         -- Languages
         --- asm
-        asmDirective = { fg = dim_comment },
+        asmDirective = { fg = def_fg },
         nasmLabel = { link = "AlabasterDefinition" },
     }
 end
