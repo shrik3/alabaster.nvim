@@ -31,26 +31,26 @@ if vim.o.background == "dark" then
     -- local fg = "#cecece"
     -- hint: try to keep these constant with terminal colors
     local bg = "#000022"
-    local fg = "#eeffcc"
     local punct_fg = "#708b8d"
-    -- local def_fg = "#88cce9"
     local white = "#ffffff"
-    local def_fg = "#88cce9"
+    local fg = "#ffffcc"
+    local type_fg = "#00ff33"
+    local def_fg = fg
     local const_fg = "#cc8bc9"
     local active = "#cd974b"
-    local string_fg = "#95cb82"
+    local string_fg = "#aaaa00"
     local darker_fg = "#7d7d7d"
     local diffadd = "#6abf40"
     local diffdelete = "#d2322d"
     local diffchange = "#ec8013"
     local statusline = "#162022"
-    local comment = "#aaaa8e"
-    local dim_comment = "#696969"
+    local comment = "#888888"
+    local dim_comment = "#666666"
     local mistake = {
         fg = "#c33c33",
         bg = "#2b1d1e",
     }
-    local error = "#d13e23"
+    local error = "#c55ccc"
     local warn = "#f4b371"
     local hint = "#8ebeec"
     local info = "#88cc66"
@@ -62,13 +62,13 @@ if vim.o.background == "dark" then
         green = "#00ff00",
         magenta = "#cc8bc9",
         red = "#c33c33",
-        white = "#cecece",
+        white = "#ffffff",
         yellow = "#cd974b",
     }
 
     visual_bg = "#333333"
     local comment_fg = vim.g.alabaster_dim_comments and dim_comment or comment
-    local pmenu_bg = "#182325"
+    local pmenu_bg = "#334455"
     local float_bg = vim.g.alabaster_floatborder and bg or pmenu_bg
     local floatborder = vim.g.alabaster_floatborder and { bg = bg, fg = "#333333" }
         or {
@@ -160,9 +160,9 @@ if vim.o.background == "dark" then
         Define = { fg = ansi.white },
         Macro = { fg = white },
         PreCondit = { fg = ansi.white },
-        Type = { fg = ansi.white },
+        Type = { fg = type_fg },
         StorageClass = { fg = ansi.white },
-        Structure = { fg = def_fg },
+        Structure = Type,
         Typedef = { fg = def_fg },
 
         Special = { fg = ansi.yellow },
@@ -186,7 +186,7 @@ if vim.o.background == "dark" then
         -- ("Ignore", below, may be invisible...)
         -- Ignore         { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-        Error = { bg = mistake.bg, fg = mistake.fg },
+        Error = { bg = mistake.bg, fg = error },
 
         Todo = { bg = "#d0d058", fg = bg },
 
