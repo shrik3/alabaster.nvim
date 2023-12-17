@@ -8,28 +8,6 @@ vim.g.colors_name = "alabaster"
 local theme
 ---@diagnostic disable: undefined-global
 if vim.o.background == "dark" then
-    -- terminal colors
-    vim.g.terminal_color_0 = "#000000"
-    vim.g.terminal_color_1 = "#d2322d"
-    vim.g.terminal_color_2 = "#6abf40"
-    vim.g.terminal_color_3 = "#cd974b"
-    vim.g.terminal_color_4 = "#217EBC"
-    vim.g.terminal_color_5 = "#9B3596"
-    vim.g.terminal_color_6 = "#178F79"
-    vim.g.terminal_color_7 = "#eeffcc"
-    vim.g.terminal_color_8 = "#333333"
-    vim.g.terminal_color_9 = "#c33c33"
-    vim.g.terminal_color_10 = "#95cb82"
-    vim.g.terminal_color_11 = "#dfdf8e"
-    vim.g.terminal_color_12 = "#88cce9"
-    vim.g.terminal_color_13 = "#cc8bc9"
-    vim.g.terminal_color_14 = "#47BEA9"
-    vim.g.terminal_color_15 = "#ffffff"
-
-    -- colors
-    -- local bg = "#0e1415"
-    -- local fg = "#cecece"
-    -- hint: try to keep these constant with terminal colors
     local bg = "#000022"
     local punct_fg = "#708b8d"
     local white = "#ffffff"
@@ -203,13 +181,6 @@ if vim.o.background == "dark" then
         DiagnosticVirtualTextHint = { bg = "#1D2B37", fg = "#7E9CB9" },
         DiagnosticVirtualTextInfo = { bg = "#162C0B", fg = "#7BAC62" },
 
-
-        --- Theme specific
-        AlabasterConstant = { fg = const_fg },
-        AlabasterDefinition = { fg = def_fg },
-        AlabasterPunct = { fg = punct_fg },
-        AlabasterString = { fg = string_fg },
-        ["@AlabasterHashbang"] = { fg = dim_comment },
         --- Gitsigns
         GitSignsAdd = { fg = diffadd },
         GitSignsChange = { fg = diffchange },
@@ -222,114 +193,22 @@ if vim.o.background == "dark" then
         TelescopeSelectionCaret = { fg = mistake.fg },
         TelescopeTitle = { fg = ansi.brightyellow },
         TelescopeResultsTitle = { fg = ansi.yellow },
-        --- fzf-lua
-        FzfLuaBorder = { fg = "#2b3d40" },
-        --- Neogit
-        NeogitPopupActionDisabled = { fg = darker_fg },
-        NeogitPopupActionKey = { fg = ansi.magenta },
-        NeogitPopupOptionDisabled = { fg = darker_fg },
-        NeogitPopupOptionKey = { fg = ansi.blue },
-        NeogitPopupSwitchDisabled = { fg = darker_fg },
-        NeogitPopupSwitchEnabled = { fg = ansi.cyan },
-        NeogitPopupSwitchKey = { fg = ansi.magenta },
-        --- Fugitive
-        diffAdded = { link = "DiffAdd" },
-        diffRemoved = { link = "DiffDelete" },
         --- Startify
         StartifyBracket = { fg = darker_fg },
         StartifyFile = { fg = ansi.white },
         StartifySection = { fg = ansi.green },
         StartifySlash = { fg = "#4e6e75" },
         StartifyPath = { fg = "#4e6e75" },
-        --- Statusline
-        StatuslineAdd = { fg = diffadd, bg = statusline },
-        StatuslineErr = { fg = error, bg = statusline },
-        StatuslineHint = { fg = hint, bg = statusline },
-        StatuslineInfo = { fg = info, bg = statusline },
-        StatuslineWarn = { fg = warn, bg = statusline },
-        StatuslineBlue = { fg = ansi.blue, bg = statusline },
-        StatuslineRed = { fg = ansi.red, bg = statusline },
-        StatuslineGreen = { fg = ansi.green, bg = statusline },
-        StatuslineCyan = { fg = ansi.cyan, bg = statusline },
-        StatuslineMagenta = { fg = ansi.magenta, bg = statusline },
-        --- ALE
-        ALEWarningSign = { fg = warn },
-        --- vim-matchup
-        MatchupVirtualText = { fg = ansi.yellow },
-        --- For `highlight link`
-        AlabasterBlack = { fg = ansi.black },
-        AlabasterBlue = { fg = ansi.blue },
-        AlabasterBrightYellow = { fg = ansi.brightyellow },
-        AlabasterCyan = { fg = ansi.cyan },
-        AlabasterGreen = { fg = ansi.green },
-        AlabasterDarkGreen = { fg = "#6abf40" },
-        AlabasterMagenta = { fg = ansi.magenta },
-        AlabasterRed = { fg = ansi.red },
-        AlabasterWhite = { fg = ansi.white },
-        AlabasterYellow = { fg = ansi.yellow },
-        --- Hop
-        HopNextKey = { fg = ansi.brightyellow },
-        HopNextKey1 = { fg = ansi.cyan },
-        HopNextKey2 = { fg = "#297567" },
-        HopUnmatched = { fg = "#3d3d3d" },
-        --- Lightspeed
-        LightspeedGreyWash = { fg = "#3d3d3d" },
         --- checkhealth
         healthSuccess = { fg = ansi.green, bg = bg },
         --- cmp
         CmpItemMenuDefault = { fg = ansi.magenta },
-        --- nvim-ts-rainbow
-        rainbowcol1 = { fg = ansi.yellow },
-        rainbowcol2 = { fg = ansi.magenta },
-        rainbowcol3 = { fg = ansi.blue },
-        rainbowcol4 = { fg = ansi.green },
-        rainbowcol5 = { fg = ansi.brightyellow },
-        rainbowcol6 = { fg = ansi.red },
-        rainbowcol7 = { fg = ansi.cyan },
-        --- Iswap
-        ISwapSnipe = { bg = ansi.yellow, fg = bg },
-        ISwapGrey = { fg = "#3d3d3d" },
-        --- vim-dadbod-ui
-        dbui_help = { fg = dim_comment },
-        dbui_connection_source = { fg = dim_comment },
-        --- nvim-dap-virtual-text
-        NvimDapVirtualText = { bg = "#1d292b", fg = ansi.cyan },
-        --- Noice
-        NoiceCmdlineIcon = { link = "AlabasterDarkGreen" },
-        NoiceCmdlinePopupBorder = { link = "AlabasterDarkGreen" },
-        NoiceConfirmBorder = { link = "AlabasterDarkGreen" },
-        NoiceCmdlinePopupBorderCmdline = { link = "AlabasterDarkGreen" },
-        NoiceCmdlineIconCmdline = { link = "AlabasterDarkGreen" },
-        NoiceCmdlinePopupBorderFilter = { link = "AlabasterDarkGreen" },
-        NoiceCmdlineIconFilter = { link = "AlabasterDarkGreen" },
-        NoiceCmdlinePopupBorderLua = { link = "AlabasterDarkGreen" },
-        NoiceCmdlineIconLua = { link = "AlabasterDarkGreen" },
-        NoiceCmdlinePopupBorderSearch = { link = "AlabasterYellow" },
-        NoiceCmdlineIconSearch = { link = "AlabasterYellow" },
         -- Languages
         --- asm
         asmDirective = { fg = def_fg},
         nasmLabel = { link = "AlabasterDefinition" },
     }
 else
-    -- terminal colors
-    vim.g.terminal_color_0 = "#000000"
-    vim.g.terminal_color_1 = "#aa3731"
-    vim.g.terminal_color_2 = "#448c27"
-    vim.g.terminal_color_3 = "#cb9000"
-    vim.g.terminal_color_4 = "#325cc0"
-    vim.g.terminal_color_5 = "#7a3e9d"
-    vim.g.terminal_color_6 = "#0083b2"
-    vim.g.terminal_color_7 = "#f7f7f7"
-    vim.g.terminal_color_8 = "#777777"
-    vim.g.terminal_color_9 = "#f05050"
-    vim.g.terminal_color_10 = "#60cb00"
-    vim.g.terminal_color_11 = "#ffbc5d"
-    vim.g.terminal_color_12 = "#007acc"
-    vim.g.terminal_color_13 = "#e64ce6"
-    vim.g.terminal_color_14 = "#00aacb"
-    vim.g.terminal_color_15 = "#f7f7f7"
-
     -- colors
     local bg = "#cccccc"
     local fg = "#000000"
@@ -505,12 +384,6 @@ else
         DiagnosticVirtualTextHint = { fg = "#0F171D", bg = "#C3D0DA" },
         DiagnosticVirtualTextInfo = { bg = "#ADFFB7", fg = "#042F09" },
 
-        --- Theme specific
-        AlabasterConstant = { fg = const_fg },
-        AlabasterDefinition = { fg = def_fg },
-        AlabasterPunct = { fg = punct_fg },
-        AlabasterString = { fg = string_fg },
-        ["@AlabasterHashbang"] = { fg = dim_comment },
         --- Gitsigns
         GitSignsAdd = { fg = "#6abf40" },
         GitSignsChange = { fg = diffchange },
@@ -523,90 +396,16 @@ else
         TelescopeSelectionCaret = { fg = mistake.fg },
         TelescopeTitle = { fg = ansi.yellow },
         TelescopeResultsTitle = { fg = ansi.yellow },
-        --- fzf-lua
-        FzfLuaBorder = { fg = "#abbdc0" },
-        --- Neogit
-        NeogitPopupActionDisabled = { fg = darker_fg },
-        NeogitPopupActionKey = { fg = ansi.magenta },
-        NeogitPopupOptionDisabled = { fg = darker_fg },
-        NeogitPopupOptionKey = { fg = ansi.blue },
-        NeogitPopupSwitchDisabled = { fg = darker_fg },
-        NeogitPopupSwitchEnabled = { fg = ansi.cyan },
-        NeogitPopupSwitchKey = { fg = ansi.magenta },
-        --- Fugitive
-        diffAdded = { link = "DiffAdd" },
-        diffRemoved = { link = "DiffDelete" },
         --- Startify
         StartifyBracket = { fg = darker_fg },
         StartifyFile = { fg = ansi.black },
         StartifySection = { fg = ansi.green },
         StartifySlash = { fg = "#4e6e75" },
         StartifyPath = { fg = "#4e6e75" },
-        --- Statusline
-        StatuslineAdd = { fg = diffadd, bg = statusline },
-        StatuslineErr = { fg = "#8E1410", bg = statusline },
-        StatuslineHint = { fg = hint, bg = statusline },
-        StatuslineInfo = { fg = info, bg = statusline },
-        StatuslineWarn = { fg = warn, bg = statusline },
-        StatuslineBlue = { fg = ansi.blue, bg = statusline },
-        StatuslineRed = { fg = ansi.red, bg = statusline },
-        StatuslineGreen = { fg = ansi.green, bg = statusline },
-        StatuslineCyan = { fg = ansi.cyan, bg = statusline },
-        StatuslineMagenta = { fg = ansi.magenta, bg = statusline },
-        --- ALE
-        ALEWarningSign = { fg = warn },
-        --- vim-matchup
-        MatchupVirtualText = { fg = ansi.yellow },
-        --- For `highlight link`
-        AlabasterBlack = { fg = ansi.black },
-        AlabasterBlue = { fg = ansi.blue },
-        AlabasterBrightYellow = { fg = ansi.brightyellow },
-        AlabasterCyan = { fg = ansi.cyan },
-        AlabasterGreen = { fg = ansi.green },
-        AlabasterBrightGreen = { fg = "#60cb00" },
-        AlabasterMagenta = { fg = ansi.magenta },
-        AlabasterRed = { fg = ansi.red },
-        AlabasterWhite = { fg = ansi.black },
-        AlabasterYellow = { fg = ansi.yellow },
-        --- Hop
-        HopNextKey = { fg = ansi.yellow },
-        HopNextKey1 = { fg = ansi.blue },
-        HopNextKey2 = { fg = "#17A2D6" },
-        HopUnmatched = { fg = "#bfbfbf" },
-        --- Lightspeed
-        LightspeedGreyWash = { fg = "#bfbfbf" },
         --- checkhealth
         healthSuccess = { fg = ansi.green, bg = bg },
         --- cmp
         CmpItemMenuDefault = { fg = ansi.magenta },
-        --- nvim-ts-rainbow
-        rainbowcol1 = { fg = ansi.yellow },
-        rainbowcol2 = { fg = ansi.magenta },
-        rainbowcol3 = { fg = ansi.blue },
-        rainbowcol4 = { fg = ansi.green },
-        rainbowcol5 = { fg = ansi.brightyellow },
-        rainbowcol6 = { fg = ansi.red },
-        rainbowcol7 = { fg = ansi.cyan },
-        --- Iswap
-        ISwapSnipe = { bg = ansi.yellow, fg = bg },
-        ISwapGrey = { fg = "#bfbfbf" },
-        --- vim-dadbod-ui
-        dbui_help = { fg = dim_comment },
-        dbui_connection_source = { fg = dim_comment },
-        --- nvim-dap-virtual-text
-        NvimDapVirtualText = { bg = "#78D2C9", fg = fg },
-        --- Noice
-        NoiceCmdlineIcon = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorder = { link = "AlabasterBrightGreen" },
-        NoiceConfirmBorder = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorderCmdline = { link = "AlabasterBrightGreen" },
-        NoiceCmdlineIconCmdline = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorderFilter = { link = "AlabasterBrightGreen" },
-        NoiceCmdlineIconFilter = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorderLua = { link = "AlabasterBrightGreen" },
-        NoiceCmdlineIconLua = { link = "AlabasterBrightGreen" },
-        NoiceCmdlinePopupBorderSearch = { link = "AlabasterYellow" },
-        NoiceCmdlineIconSearch = { link = "AlabasterYellow" },
         -- Languages
         --- asm
         asmDirective = { fg = def_fg },
@@ -615,21 +414,6 @@ else
 end
 
 -- hlmap
-local hl_map = {
-    "AlabasterDefinition",
-    "AlabasterPunct",
-    "AlabasterString",
-    "AlabasterConstant",
-}
-
-local link_captures = nil
-link_captures = function(_, highlight_group)
-    vim.api.nvim_set_hl(0, "@" .. highlight_group, { link = highlight_group })
-end
-
-for key, value in pairs(hl_map) do
-    link_captures(key, value)
-end
 
 for k, v in pairs(theme) do
     vim.api.nvim_set_hl(0, k, v)
