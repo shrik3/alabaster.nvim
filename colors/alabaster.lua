@@ -52,6 +52,7 @@ if vim.o.background == "dark" then
     theme = {
         cBlock = { fg = ansi.green, bold=1 },
         Comment = { fg = comment_fg },
+        SpecialComment = {fg = comment_fg },
         ColorColumn = { bg = "#000044" },
         Conceal = { fg = "#b0b0b0" },
         Cursor = { bg = active, fg = "#000000" },
@@ -144,7 +145,6 @@ if vim.o.background == "dark" then
         -- SpecialChar = { fg = diffchange }, --  special character in a constant
         -- Tag            { }, --    you can use CTRL-] on this
         -- Delimiter      { },
-        SpecialComment = { bg = "#1d292b", fg = ansi.blue },
         debugPc = { bg = "#0f2534" },
         debugBreakpoint = { bg = "#b33229" },
         helpHyperTextJump = { fg = ansi.magenta },
