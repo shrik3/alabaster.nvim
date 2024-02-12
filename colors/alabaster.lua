@@ -106,7 +106,7 @@ if vim.o.background == "dark" then
 		TabLineFill = { bg = statusline },
 		TabLineSel = { bg = statusline, fg = ansi.blue },
 		Title = { fg = const_fg },
-		Visual = { bg = visual_bg },
+		Visual = { fg = visual_fg, bg = visual_bg },
 		VisualNOS = { bg = visual_bg },
 		WarningMsg = { fg = "#e1ad4c" },
 		WildMenu = { bg = "#354c50" },
