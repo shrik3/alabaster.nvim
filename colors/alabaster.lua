@@ -44,7 +44,8 @@ if vim.o.background == "dark" then
         yellow = "#cd974b",
     }
 
-    visual_bg = "#333333"
+    visual_bg = "#cccccc"
+    visual_bg = "#000000"
     local comment_fg = vim.g.alabaster_dim_comments and dim_comment or comment
     local pmenu_bg = bg
     local float_bg = vim.g.alabaster_floatborder and bg or pmenu_bg
